@@ -19,14 +19,15 @@
   <body>
     <header>
       <div class="header-logo-container">
-        <a href="/">
+        <a href="{% url 'home' %}">
           <img src="" alt="The Cat Collector Logo" />
         </a>
       </div>
       <nav>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/recipes">Recipe</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'recipes_index' %}">Recipes</a></li>
+          <li><a href="{% url 'recipes_create' %}">New Recipe</a></li>
         </ul>
       </nav>
     </header>
