@@ -72,6 +72,54 @@
       <button type="submit" class="btn submit">Add Instruction</button>
     </form>
   </section>
+
+  <section class="ingredients">
+    <div class="subsection-title">
+      <h2>Ingredients</h2>
+      <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
+      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
+      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
+    </div>
+    <h3>{{ recipe.name }}'s Ingredients</h3>
+    <div class="subsection-content">
+      {% if recipe.ingredients.count %}
+      <br />
+      {% for ingredient in recipe.ingredients.all %}
+      <div class="ingredient-container">
+        <div class="color-block"></div>
+        <a href="{% url 'ingredients_detail' ingredient.id %}">
+          <p>{{ ingredient.name }}</p>
+        </a>
+      </div>
+      {% endfor %}
+      <br />
+      {% else %}
+      <p class="no-ingredients">
+        {{recipe.name}} doesn't have any ingredients 😞
+      </p>
+      {% endif %}
+    </div>
+    <h3>Available Ingredients</h3>
+    <div class="subsection-content">
+      {% if ingredients.count %} {% for ingredient in ingredients.all %}
+      <div class="ingredient-container">
+        <div class="color-block"></div>
+        <a href="{% url 'ingredients_detail' ingredient.id %}">
+          <p>{{ ingredient.name }}</p>
+        </a>
+        <form
+          action="{% url 'assoc_ing' recipe.id ingredient.id %}"
+          method="post"
+        >
+          {% csrf_token %}
+          <button type="submit" class="btn submit">Add Ingredient</button>
+        </form>
+      </div>
+      {% endfor %} {% else %}
+      <p class="all-ingredients">What in the absolute nasty are you making?</p>
+      {% endif %}
+    </div>
+  </section>
 </div>
 
 {% endblock %}

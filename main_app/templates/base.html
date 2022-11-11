@@ -25,9 +25,16 @@
       </div>
       <nav>
         <ul>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'recipes_index' %}">Recipes</a></li>
           <li><a href="{% url 'recipes_create' %}">New Recipe</a></li>
+          <li><a href="{% url 'ingredients_index' %}">Ingredients</a></li>
+          <li><a href="{% url 'ingredients_create' %}">Add Ingredient</a></li>
+          {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
