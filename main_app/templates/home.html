@@ -4,14 +4,19 @@
 
 <section class="logo-container">
   <div class="cat-container">
-    <img src="{% static 'images/splash.svg' %}" alt="Recipe Collector" />
+    <img
+      style="height: 30vh"
+      src="{% static 'images/recipe.png' %}"
+      alt="Recipe Collector"
+    />
   </div>
   <img
-    src="{% static 'images/logotype.svg' %}"
-    alt="Text reads: Recipe Collector"
+    src="{% static 'images/recipebook.png' %}"
+    alt="Text reads: Recipe Book"
   />
 </section>
 
+{% if not user.is_authenticated %}
 <section>
   <form action="{% url 'home' %}" method="post" class="login">
     <h1>Login</h1>
@@ -20,5 +25,4 @@
     <button type="submit" class="btn submit">Login</button>
   </form>
 </section>
-
-{% endblock %}
+{% endif %} {% endblock %}

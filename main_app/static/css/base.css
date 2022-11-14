@@ -206,8 +206,9 @@ nav li {
   }
 
   .page-header img {
-    height: 50px;
-    margin-left: 20px;
+    width: 70%;
+    margin: 0;
+    margin-top: -8px;
   }
 
   .page-header img:first-of-type {
@@ -254,6 +255,12 @@ nav li {
     padding-top: 6px;
     width: 256px;
     height: 35px;
+  }
+
+  .header-nav-img {
+    width: 70%;
+    margin: 0;
+    margin-top: -8px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {

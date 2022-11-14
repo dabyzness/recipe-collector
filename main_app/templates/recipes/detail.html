@@ -9,7 +9,8 @@
 <section class="recipe-container">
   <div class="recipe-img">
     <img
-      src="{% static 'images/sk8r-boi-recipe.svg' %}"
+      style="width: 100%"
+      src="{% static 'images/meal.png' %}"
       alt="A skater boy recipe"
     />
   </div>
@@ -26,17 +27,20 @@
   </div>
 </section>
 
-<div class="instructions-toy-container">
+<div class="instructions-ingredient-container">
   <section class="instructions">
     <div class="subsection-title">
       <h2>Instructions</h2>
       <img
-        src="{% static 'images/cat-cone.svg' %}"
+        src="{% static 'images/ingredients1.png' %}"
         alt="An ice cream cone cat"
       />
-      <img src="{% static 'images/cat-onigiri.svg' %}" alt="A cat as onigiri" />
       <img
-        src="{% static 'images/kitty-kabob.svg' %}"
+        src="{% static 'images/ingredients2.png' %}"
+        alt="A cat as onigiri"
+      />
+      <img
+        src="{% static 'images/ingredients3.png' %}"
         alt="A kabob of kittens"
       />
     </div>
@@ -59,7 +63,7 @@
     </table>
     {% else %}
     <div class="subsection-content">
-      <p>{{recipe.name}} has no instructions 😔</p>
+      <p class="unfed">{{recipe.name}} has no instructions 😔</p>
     </div>
     {% endif %}
     <h3>Add an Instruction</h3>
@@ -76,9 +80,15 @@
   <section class="ingredients">
     <div class="subsection-title">
       <h2>Ingredients</h2>
-      <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
-      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
-      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
+      <img
+        src="{% static 'images/ingredients4.png' %}"
+        alt="A ball of string"
+      />
+      <img src="{% static 'images/ingredients5.png' %}" alt="A mouse" />
+      <img
+        src="{% static 'images/ingredients6.png' %}"
+        alt="A fishy ingredient"
+      />
     </div>
     <h3>{{ recipe.name }}'s Ingredients</h3>
     <div class="subsection-content">

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="" />
-    <title>Recipe Collector</title>
+    <title>Recipe Book</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
     <link
       rel="shortcut icon"
@@ -20,20 +20,27 @@
     <header>
       <div class="header-logo-container">
         <a href="{% url 'home' %}">
-          <img src="" alt="The Cat Collector Logo" />
+          <img
+            style="width: 70%; margin-top: -8px"
+            src="{% static 'images/recipebanner.png' %}"
+            alt="The Cat Collector Logo"
+          />
         </a>
       </div>
       <nav>
         <ul>
-          {% if user.is_authenticated %}
+          {% if user.is_authenticated %} {% comment %}
           <li><a href="{% url 'about' %}">About</a></li>
+          {% endcomment %}
           <li><a href="{% url 'recipes_index' %}">Recipes</a></li>
           <li><a href="{% url 'recipes_create' %}">New Recipe</a></li>
           <li><a href="{% url 'ingredients_index' %}">Ingredients</a></li>
           <li><a href="{% url 'ingredients_create' %}">Add Ingredient</a></li>
+          <li><a href="{% url 'logout' %}">Log out</a></li>
           {% else %}
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
           {% endif %}
         </ul>
       </nav>

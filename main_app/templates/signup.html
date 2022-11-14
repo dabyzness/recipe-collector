@@ -3,20 +3,17 @@
 {% endblock %} {% block content %}
 
 <div class="page-header">
-  {% if recipe %}
-  <h1>Edit {{ recipe.name }}</h1>
-  {% else %}
-  <h1>Add a Recipe</h1>
-  {% endif %}
+  <h1>Sign Up</h1>
   <img src="{% static 'images/chef.png' %}" alt="A cat using a computer" />
 </div>
-
-<form action="" method="post" class="form-container">
+{% if error_message %}
+<p class="red-text">{{ error_message }}</p>
+{% endif %}
+<form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-
   <button type="submit" class="btn submit">Submit!</button>
 </form>
 
